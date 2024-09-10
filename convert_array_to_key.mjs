@@ -1,16 +1,17 @@
-const fs = require('fs');
-const { Keypair } = require('@solana/web3.js');
+import { promises as fs } from 'fs';
+import { Keypair } from '@solana/web3.js';
 
 // Fonction pour lire le fichier de clé
-function readKeyFile(path) {
-    return JSON.parse(fs.readFileSync(path, 'utf-8'));
+async function readKeyFile(path) {
+    const data = await fs.readFile(path, 'utf-8');
+    return JSON.parse(data);
 }
 
 // Chemin vers votre fichier de clé
 const keyPath = '/root/.config/solana/id.json';
 
 // Lire le fichier de clé
-const keyData = readKeyFile(keyPath);
+const keyData = await readKeyFile(keyPath);
 
 // Créer un objet Keypair à partir des données
 const keypair = Keypair.fromSecretKey(new Uint8Array(keyData));
