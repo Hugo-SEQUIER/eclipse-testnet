@@ -24,4 +24,4 @@ const publicKey = keypair.publicKey.toBase58();
 const privateKey = bs58.encode(keyData);
 
 console.log(`Public Key: ${publicKey}`);
-console.log(`Private Key: ${privateKey}`);
+console.log(`Private Key: ${privateKey}`); 
