@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import { Keypair } from '@solana/web3.js';
+import bs58 from 'bs58';
 
 // Fonction pour lire le fichier de clé
 async function readKeyFile(path) {
@@ -20,7 +21,7 @@ const keypair = Keypair.fromSecretKey(new Uint8Array(keyData));
 const publicKey = keypair.publicKey.toBase58();
 
 // Obtenir la clé privée
-const privateKey = Buffer.from(keypair.secretKey).toString('base64');
+const privateKey = bs58.encode(Buffer.from(keypair));
 
 console.log(`Public Key: ${publicKey}`);
 console.log(`Private Key: ${privateKey}`);
