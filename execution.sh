@@ -28,9 +28,9 @@ solana config set --url https://staging-rpc.dev2.eclipsenetwork.xyz
 solana-keygen new -o /root/.config/solana/id.json
 solana airdrop 10
 
+npm install bs58 @solana/web3.js fs
 echo
 echo '---- Your Private Key (to export on a Wallet Manager) ----'
-npm install bs58 @solana/web3.js fs
 node convert_array_to_key.mjs
 echo '---- Your Private Key (to export on a Wallet Manager) ----'
 echo
