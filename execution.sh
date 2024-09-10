@@ -51,8 +51,9 @@ echo "We need it to sign the bridge"
 echo "Also you need to have at least 0.02 ETH on Sepolia network on this address"
 echo "Please enter the destination Eclipse public key:"
 read PUBLIC_KEY_ECLIPSE
+echo "Please enter the eth amount you want to bridge"
+read AMOUNT
 
+node bin/cli.js -k private-key.txt -d $PUBLIC_KEY_ECLIPSE -a $AMOUNT --sepolia
 
-node bin/cli.js -k private-key.txt -d $PUBLIC_KEY_ECLIPSE -a 0.02 --sepolia
-
-echo "0.02 ETH has been bridged from Sepolia to Eclipse"
+echo "$AMOUNT ETH has been bridged from Sepolia to Eclipse"
