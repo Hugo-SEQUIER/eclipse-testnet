@@ -26,13 +26,12 @@ echo
 # Solana config
 solana config set --url https://staging-rpc.dev2.eclipsenetwork.xyz
 solana-keygen new -o /root/.config/solana/id.json
-apt-get install -y python3-pip
-pip install json base58 solana
 solana airdrop 10
 
 echo
 echo '---- Your Private Key (to export on a Wallet Manager) ----'
-python3 convert_array_to_private_key.py
+npm install bs58 @solana/web3.js fs
+node convert_array_to_key.mjs
 echo '---- Your Private Key (to export on a Wallet Manager) ----'
 echo
 echo '---- Solana Configured ----'
