@@ -21,7 +21,7 @@ const keypair = Keypair.fromSecretKey(new Uint8Array(keyData));
 const publicKey = keypair.publicKey.toBase58();
 
 // Obtenir la clé privée
-const privateKey = bs58.encode(Buffer.from(keypair));
+const privateKey = bs58.encode(keyData);
 
 console.log(`Public Key: ${publicKey}`);
 console.log(`Private Key: ${privateKey}`);
